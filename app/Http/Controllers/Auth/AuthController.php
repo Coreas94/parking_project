@@ -47,9 +47,8 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         
         if (Auth::attempt($credentials)) {
-         \Log::info('entraaa');
             return redirect()->intended('/')
-                        ->withSuccess('You have Successfully loggedin');
+            ->withSuccess('You have Successfully loggedin');
         }
   
         //return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');

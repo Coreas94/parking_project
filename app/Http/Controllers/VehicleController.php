@@ -24,7 +24,6 @@ class VehicleController extends Controller
     public function index()
     {
         $vehicle = Vehicle::join('vehicle_type', 'vehicle.vehicle_type_id', '=', 'vehicle_type.id_vehicle_type')->get();
-        \Log::info($vehicle);
         return view("admin.list_vehicles", compact('vehicle'));
     }
     
@@ -42,7 +41,6 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-        \Log::info($request);
         $type = VehicleType::get();
         $validator = Validator::make($request->all(), [
             'plate' => 'required|unique:vehicle,plate',

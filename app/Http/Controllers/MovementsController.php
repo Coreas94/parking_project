@@ -79,7 +79,7 @@ class MovementsController extends Controller
                         $total = $end_date->diffInMinutes($start_date);
                         $total_price = $total * 0.5;
 
-                        Alert::success('Success', 'Salida de vehiculo No Residente registrada correctamente, TOTAL A PAGAR: $'.$total_price);
+                        Alert::success('Success', 'Salida de vehiculo No Residente registrada correctamente, TOTAL TIEMPO ESTANCIA: '.$total.' minutos, TOTAL A PAGAR: $'.$total_price);
                         return back();
                         break;
                 }

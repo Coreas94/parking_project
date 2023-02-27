@@ -34,7 +34,6 @@ class VehicleTypeController extends Controller
      */
     public function store(Request $request)
     {
-        \Log::info($request);
         $validator = Validator::make($request->all(), [
             'type_vehicle_name' => 'required|unique:vehicle_type,type_vehicle_name'
         ]);
