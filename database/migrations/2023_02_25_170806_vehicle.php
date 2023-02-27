@@ -20,6 +20,8 @@ class Vehicle extends Migration
             $table->unsignedBigInteger('vehicle_type_id');
             $table->string('description',100)->nullable();;
             $table->timestamps();
+
+            $table->foreign('vehicle_type_id')->references('id_vehicle_type')->on('vehicle_type');
         });
     }
 

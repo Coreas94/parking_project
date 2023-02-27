@@ -22,6 +22,8 @@ class Movements extends Migration
             $table->boolean('status')->default(0);
             $table->string('description',100)->nullable();
             $table->timestamps();
+
+            $table->foreign('id_vehicle')->references('id_vehicle')->on('vehicle');
         }); 
     }
 
